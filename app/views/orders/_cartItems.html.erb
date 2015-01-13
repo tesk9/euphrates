@@ -1,20 +1,32 @@
-<div ng-controller="cartController" ng-class="{false: 'show', true: 'hide'}[showList]">
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Quantity</th>
-        <th>Price per Unit</th>
-        <th>Cost</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in cartContents">
-        <td>{{ item.name }}</td>
-        <td>{{ item.cartCounter }}</td>
-        <td>{{ item.price }}</td>
-        <td>{{ item.cartCounter * item.price }}</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Quantity</th>
+      <th>Price per Unit</th>
+      <th>Cost</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in cartContents">
+      <td>{{ item.name }}</td>
+      <td>{{ item.cartCounter }}</td>
+      <td>{{ item.price }}</td>
+      <td>{{ item.cost }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td>Net Price:</td>
+      <td>{{ totalPrice() }}</td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>
+        <button>Checkout</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
