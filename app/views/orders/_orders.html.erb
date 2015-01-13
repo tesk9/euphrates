@@ -1,7 +1,7 @@
 
-<div ng-controller="cartController" ng-class="{false: 'show', true: 'hide'}[showList()]">
+<div ng-controller="cartController" ng-class="{false: 'show', true: 'hide'}[show()]">
   <span>
-    <button class="align-right" ng-click="showList=updateShowList()">Return to Browse</button>
+    <button class="align-right" ng-click="updateShow()">Return to Browse</button>
   </span>
 
   <div ng-show="cartContents.length > 0">

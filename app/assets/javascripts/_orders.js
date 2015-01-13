@@ -1,13 +1,12 @@
-app.controller('cartController', ['$scope', 'cartService', function($scope, cartService) {
+app.controller('cartController', ['$scope', 'cartService', 'Show', function($scope, cartService, Show) {
   $scope.cartContents = cartService.getCart();
 
-  $scope.showList = function() {
-    return cartService.showList();
+  $scope.show = function() {
+    console.log(Show);
+    console.log("Order: "+Show.show())
+    return Show.show();
   }
-
-  $scope.updateShowList = function() {
-    return cartService.updateShow();
-  }
+  $scope.updateShow = Show.updateShow;
 
   $scope.totalPrice = function() {
     var total = 0;
@@ -26,6 +25,12 @@ app.controller('cartController', ['$scope', 'cartService', function($scope, cart
   $scope.checkout = function(e) {
     angular.element(".remove-from-order").addClass('hide');
     angular.element(".checkout").addClass('hide');
+  }
+
+  $scope.submitOrder = function() {
+    // Submit cart contents
+
+
   }
 
 }]);

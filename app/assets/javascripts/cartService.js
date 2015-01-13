@@ -1,6 +1,5 @@
 app.service('cartService', function() {
   var cartContents = [];
-  var show;
   var cartHasNum;
 
   var addToCart = function(item) {
@@ -33,21 +32,9 @@ app.service('cartService', function() {
     return cartContents;
   }
 
-  var showList = function() {
-    show = ((show !== undefined) ? show : true);
-    return show; 
-  }
-
-  var updateShow = function() {
-    show = !show;
-    return showList();
-  }
-
   return {
     addToCart: addToCart,
     getCart: getCart,
-    showList: showList,
-    updateShow: updateShow,
     cartNum: cartLength,
     removeItem: removeFromCart
   }
