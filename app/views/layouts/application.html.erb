@@ -7,8 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class='container' ng-app="items">
+    <div class='container'>
+      <div class='jumbotron'>
+        <h1>Euphrates</h1>
+        <h3 class="align-left">The World's Marketplace</h3>
+      </div>
+    </div>
 
-  <%= yield %>
+    <%= render 'listItems' %>
+    <%= render 'orders/cartItems' %>
+  </div>
+
 
   <!-- Latest compiled and minified CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
