@@ -1,8 +1,8 @@
-<div class="hide">
-  <span><button class="align-right" ng-click="showList=updateShowList">Return to Browse{{ cartContents.length }}</button></span>
-</div>
 
 <div ng-controller="cartController" ng-class="{false: 'show', true: 'hide'}[showList()]">
+  <span>
+    <button class="align-right" ng-click="showList=updateShowList()">Return to Browse</button>
+  </span>
 
   <div ng-show="cartContents.length > 0">
     <%= render "orders/cartItems" %>

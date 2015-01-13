@@ -5,28 +5,27 @@
       <th>Quantity</th>
       <th>Price per Unit</th>
       <th>Cost</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
     <tr ng-repeat="item in cartContents">
       <td>{{ item.name }}</td>
       <td>{{ item.cartCounter }}</td>
-      <td>{{ item.price }}</td>
-      <td>{{ item.cost }}</td>
+      <td>${{ item.price }}</td>
+      <td>${{ item.cost }}</td>
+      <td><button ng-click="removeItem(item)" class="remove-from-order">Remove Item</button></td>
     </tr>
     <tr>
       <td></td>
       <td></td>
       <td>Net Price:</td>
-      <td>{{ totalPrice() }}</td>
-    </tr>
-    <tr>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td>
-        <button>Checkout</button>
-      </td>
+      <td>${{ totalPrice() }}</td>
+      <td><button ng-click="checkout(); showForm=true" class="checkout">Checkout</button></td>
     </tr>
   </tbody>
 </table>
+
+<div ng-show="showForm">
+  <%= render 'orders/orderForm' %>
+</div>

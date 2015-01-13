@@ -6,11 +6,12 @@ app.controller('itemsCtlr', ['$scope', 'cartService', function($scope, cartServi
                 {id: 3, name: "Aurochs", description: 'item3', price: 15, quantity: 1, url: "http://fc05.deviantart.net/fs70/i/2010/227/8/7/The_Aurochs_by_phan_tom.jpg"}
                 ];
 
-  $scope.showList =  cartService.showList();
+  $scope.showList = function() {
+    return cartService.showList();
+  } 
   
   $scope.updateShowList = function() {
-    var newShow = cartService.updateShow();
-    return cartService.showList();
+    return cartService.updateShow();
   }
 
   $scope.cartContents = cartService.getCart();

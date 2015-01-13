@@ -13,6 +13,13 @@ app.service('cartService', function() {
     }
   }
 
+  var removeFromCart = function(item) {
+    cartHasNum--;
+    var location = cartContents.indexOf(item);
+    cartContents.splice(location, 1);
+    return cartContents;
+  }
+
   var cartLength = function() {
     if(cartHasNum !== undefined) {
       return cartHasNum;
@@ -27,12 +34,13 @@ app.service('cartService', function() {
   }
 
   var showList = function() {
-    show = (show !== undefined) ? show : true;
+    show = ((show !== undefined) ? show : true);
     return show; 
   }
 
   var updateShow = function() {
     show = !show;
+    return showList();
   }
 
   return {
@@ -40,6 +48,7 @@ app.service('cartService', function() {
     getCart: getCart,
     showList: showList,
     updateShow: updateShow,
-    cartNum: cartLength
+    cartNum: cartLength,
+    removeItem: removeFromCart
   }
 })
