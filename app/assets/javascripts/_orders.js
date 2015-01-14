@@ -1,9 +1,7 @@
-app.controller('cartController', ['$scope', 'cartService', 'Show', function($scope, cartService, Show) {
+app.controller('cartController', ['$scope', 'Orders', 'cartService', 'Show', function($scope, Orders, cartService, Show) {
   $scope.cartContents = cartService.getCart();
 
   $scope.show = function() {
-    console.log(Show);
-    console.log("Order: "+Show.show())
     return Show.show();
   }
   $scope.updateShow = Show.updateShow;
@@ -28,8 +26,11 @@ app.controller('cartController', ['$scope', 'cartService', 'Show', function($sco
   }
 
   $scope.submitOrder = function() {
-    // Submit cart contents
+    $scope.hideForm = true;
 
+    // $scope.orderComments
+
+    Orders.postOrder({person: $scope.orderName, cost: $scope.totalPrice()})
 
   }
 

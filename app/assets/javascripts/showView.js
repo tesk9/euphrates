@@ -8,9 +8,7 @@ app.factory('Show', [function() {
       return show;
     },
     updateShow: function() {
-      console.log("clicked");
       show = !show;
-      console.log(show);
     } 
   }
 }])
