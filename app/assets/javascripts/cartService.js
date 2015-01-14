@@ -1,6 +1,7 @@
 app.service('cartService', function() {
   var cartContents = [];
   var cartHasNum;
+  var completeOrd;
 
   var addToCart = function(item) {
     cartHasNum++;
@@ -32,10 +33,22 @@ app.service('cartService', function() {
     return cartContents;
   }
 
+  var checkout = function() {
+    return completeOrd;
+  }
+
+  var completeOrder = function(status) {
+    // cartContents = [];
+    // cartHasNum = 0;
+    completeOrd = status;
+  }
+
   return {
     addToCart: addToCart,
     getCart: getCart,
     cartNum: cartLength,
-    removeItem: removeFromCart
+    removeItem: removeFromCart,
+    checkout: checkout,
+    completeOrder: completeOrder
   }
 })

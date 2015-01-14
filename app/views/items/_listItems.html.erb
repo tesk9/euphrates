@@ -2,6 +2,7 @@
   <span>
     <button class="align-right" ng-click="updateShow()">Cart: {{ cartLength() }}</button>
   </span>
+  {{ updateItems() }}
   <table class="item-holder" ng-repeat="item in items" ng-init="item.show=false" ng-class="{true: 'hide'}[item.quantity < 1]">
     <tbody>
       <tr>

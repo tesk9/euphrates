@@ -27,11 +27,9 @@ app.controller('cartController', ['$scope', 'Orders', 'cartService', 'Show', fun
 
   $scope.submitOrder = function() {
     $scope.hideForm = true;
-
-    // $scope.orderComments
-
-    Orders.postOrder({person: $scope.orderName, cost: $scope.totalPrice()})
-
+    Orders.postOrder({person: $scope.orderName, cost: $scope.totalPrice()});
+    cartService.completeOrder(true);
+    angular.element(".form-horizontal").before("<div class='container'><h5>Your order has been submitted.<br> Please save a copy of this page for your records.</h5></div>");
   }
 
 }]);

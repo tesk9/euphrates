@@ -20,4 +20,15 @@ app.controller('itemsCtlr', ['$scope', 'Items', 'cartService', 'Show', function(
   $scope.showPrice = function(item) {
     item.show = !item.show;
   }
+
+  $scope.completeOrd = function() {
+    return cartService.checkout();
+  }
+
+  $scope.updateItems = function() {
+    if($scope.completeOrd()) {
+      Items.updateItems($scope.cartContents);
+      cartService.completeOrder(false);
+    }
+  }
 }]);
