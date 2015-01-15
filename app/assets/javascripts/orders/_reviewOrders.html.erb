@@ -1,5 +1,10 @@
-<div >
+<div ng-class="{true: 'show', false: 'hide'}[allOrders.length > 0]">
   <table class='table table-striped'>
+    <tr>
+      <th>Ordered By</th>
+      <th>Total Order Amount</th>
+      <th>Date</th>
+    </tr>
     <tbody>
       <tr ng-repeat="order in allOrders">
         <td>{{ order.person }}</td>
@@ -8,4 +13,10 @@
       </tr>
     </tbody>
   </table>
+</div>
+
+<div ng-class="{true: 'show', false: 'hide'}[allOrders.length == 0]">
+  <div class="container">
+    <h4 class="text-center">No past orders yet! You better buy something.</h4>
+  </div>
 </div>
