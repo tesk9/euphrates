@@ -23,3 +23,20 @@ a:active {
   text-decoration: none;
 }
 
+.logo {
+  margin-top: 70px;
+  max-height: 100px;
+  display: inline-block;
+  float: left;
+}
+
+.inline {
+  margin-top: 70px;
+  margin-left: 20px;
+  display: inline-block;
+  color: gray;
+}
+
+.border {
+  border-top: 2px solid #B22525;
+}
