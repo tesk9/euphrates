@@ -1,0 +1,16 @@
+var app = angular.module('euphrates', ['ngRoute', 'ngResource']);
+
+app.config(function($routeProvider) {
+  $routeProvider
+    .when("/", { 
+      templateUrl: '<%= asset_path("items/_listItems.html.erb") %>',
+      controller: "itemsCtlr" 
+    })
+    .when("/cart", { 
+      templateUrl: '<%= asset_path("orders/_orders.html.erb") %>',
+      controller: "cartController"
+    })
+    .otherwise({
+      redirectTo: "/"
+    });
+})

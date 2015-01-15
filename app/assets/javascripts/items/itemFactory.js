@@ -21,15 +21,6 @@ app.factory('Items', ['$resource', function($resource) {
         item.$update()
       });
     })
-    // items.forEach(function(v) {
-    //   console.log(v.id)
-    //   Item.get({id: v.id}, function(item) {
-    //     // console.log(v.quantity);
-    //     // console.log(item.quantity);
-    //     // item.quantity = v.quantity;
-    //     // item.$update();
-    //   })
-    // })
   }
 
   return { 
