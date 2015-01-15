@@ -19,3 +19,7 @@
   float: right;
 }
 
+a:active {
+  text-decoration: none;
+}
+

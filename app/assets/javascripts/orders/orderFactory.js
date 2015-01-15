@@ -5,7 +5,12 @@ app.factory("Orders", ['$resource', function($resource) {
     Orders.save(order);
   }
 
+  var getAll = function() {
+    return Orders.query();
+  }
+
   return {
-    postOrder: postOrder
+    postOrder: postOrder,
+    getOrders: getAll
   }
 }])

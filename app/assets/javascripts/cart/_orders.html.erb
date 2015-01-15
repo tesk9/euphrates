@@ -1,0 +1,23 @@
+
+<div ng-class="{false: 'show', true: 'hide'}[show()]">
+  <span>
+    <button class="align-right" ng-click="updateShow()">Return to Browse</button>
+  </span>
+
+  <div ng-show="cartContents.length > 0">
+    <div ng-include="'<%= asset_path('cart/cartContents.html.erb') %>'"></div>
+  </div>
+
+  <div ng-show="showForm">
+    <div ng-include="'<%= asset_path('cart/orderForm.html.erb') %>'"></div>
+  </div>
+    
+
+  <div ng-show="cartContents.length == 0">
+    <div class='text-center'>
+      <h4>Your cart is empty.
+      </h4>
+    </div>
+  </div>
+
+</div>

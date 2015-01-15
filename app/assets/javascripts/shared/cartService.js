@@ -38,9 +38,12 @@ app.service('cartService', function() {
   }
 
   var completeOrder = function(status) {
-    // cartContents = [];
-    // cartHasNum = 0;
     completeOrd = status;
+  }
+
+  var endTransaction = function() {
+    cartContents = [];
+    cartHasNum = 0;
   }
 
   return {
@@ -49,6 +52,7 @@ app.service('cartService', function() {
     cartNum: cartLength,
     removeItem: removeFromCart,
     checkout: checkout,
-    completeOrder: completeOrder
+    completeOrder: completeOrder,
+    endTransaction: endTransaction
   }
 })

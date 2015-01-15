@@ -29,6 +29,7 @@ app.controller('itemsCtlr', ['$scope', 'Items', 'cartService', 'Show', function(
     if($scope.completeOrd()) {
       Items.updateItems($scope.cartContents);
       cartService.completeOrder(false);
+      cartService.endTransaction();
     }
   }
 }]);

@@ -7,8 +7,12 @@ app.config(function($routeProvider) {
       controller: "itemsCtlr" 
     })
     .when("/cart", { 
-      templateUrl: '<%= asset_path("orders/_orders.html.erb") %>',
+      templateUrl: '<%= asset_path("cart/_orders.html.erb") %>',
       controller: "cartController"
+    })
+    .when("/pastorders", {
+      templateUrl: '<%= asset_path("orders/_reviewOrders.html.erb") %>',
+      controller: "orderController"
     })
     .otherwise({
       redirectTo: "/"

@@ -1,0 +1,11 @@
+<div >
+  <table class='table table-striped'>
+    <tbody>
+      <tr ng-repeat="order in allOrders">
+        <td>{{ order.person }}</td>
+        <td>${{ order.cost }}.00</td>
+        <td>{{ parseDate(order.created_at) }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
